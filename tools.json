@@ -9,7 +9,7 @@
   },
   {
     "name": "【AR6統計降尺度資料合併工具】",
-    "description": "TCCIP資料商店下載不同區域的AR6統計降尺度日資料或月資料，如不同縣市、不同流域的資料，透過此工具可以進行合併，並保留原本資料格式。",
+    "description": "從TCCIP資料商店下載不同區域的AR6統計降尺度日資料或月資料，如不同縣市、不同流域的資料，可透過此工具進行合併，並保留原本資料格式。",
     "image": "images/tool2.png",
     "download": "https://125.229.194.84/share.cgi?ssid=0b4a8f88e51c4db39e22a7dd12ee1e54",
     "doc": "AR6_統計降尺度資料合併工具v0.pdf",
