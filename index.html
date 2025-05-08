@@ -3,8 +3,8 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <title>2.1.4氣候變遷資料應用工具</title>
-  <meta property="og:title" content="2.1.4氣候變遷資料應用工具" />
+  <title>2.1.4 氣候變遷資料應用工具</title>
+  <meta property="og:title" content="2.1.4 氣候變遷資料應用工具" />
   <meta property="og:description" content="整合多項實用資料處理工具 – 雲端下載、資料合併、格式轉換等" />
   <meta property="og:image" content="https://tedliu13.github.io/tools/images/toollist_og_image.png" />
   <meta property="og:type" content="website" />
@@ -50,54 +50,123 @@
     .text-muted {
       color: #ffffff !important;
     }
+    select {
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="overlay">
     <div class="container">
-      <h2 class="text-center mb-4">🧰2.1.4氣候變遷資料應用工具</h2>
+      <h2 class="text-center mb-4">🧰 2.1.4 氣候變遷資料應用工具</h2>
+      <div class="d-flex flex-wrap justify-content-center mb-4">
+        <select id="filter-interface" class="form-select form-select-sm w-auto">
+          <option value="">所有介面</option>
+          <option>程式介面</option>
+          <option>網頁介面</option>
+        </select>
+        <select id="filter-domain" class="form-select form-select-sm w-auto">
+          <option value="">所有領域</option>
+          <option>淹水</option>
+          <option>坡地</option>
+          <option>農業</option>
+          <option>水資源</option>
+          <option>養殖</option>
+          <option>健康</option>
+          <option>都市</option>
+          <option>漁業</option>
+        </select>
+        <select id="filter-release" class="form-select form-select-sm w-auto">
+          <option value="">所有釋出時間</option>
+        </select>
+        <select id="filter-status" class="form-select form-select-sm w-auto">
+          <option value="">所有狀態</option>
+          <option>使用中</option>
+          <option>停止使用</option>
+        </select>
+      </div>
       <div class="row g-4" id="tool-list"></div>
     </div>
   </div>
 
   <script>
-    fetch('tools.json')
+    let allData = [];
+
+    fetch('tools_multi_domain.json')
       .then(response => response.json())
       .then(data => {
-        const container = document.getElementById('tool-list');
-        data.forEach(tool => {
-          const col = document.createElement('div');
-          col.className = 'col-md-6';
+        allData = data;
+        populateReleaseDates(data);
+        renderTools(data);
+      })
+      .catch(error => console.error('載入工具資料失敗：', error));
 
-          let docButton = '';
-          if (tool.doc && tool.doc.trim() !== '') {
-            docButton = `<a href="${tool.doc}" class="btn btn-secondary btn-sm ms-2" target="_blank">說明</a>`;
-          }
+    function populateReleaseDates(data) {
+      const releaseSet = new Set(data.map(t => t["release"]).filter(Boolean));
+      const select = document.getElementById("filter-release");
+      [...releaseSet].sort().forEach(r => {
+        const option = document.createElement("option");
+        option.textContent = r;
+        select.appendChild(option);
+      });
+    }
 
-          col.innerHTML = `
-            <div class="card h-100">
-              <div class="row g-0 align-items-center">
-                <div class="col-5 p-2">
-                  <img src="${tool.image}" class="card-img-left img-fluid" alt="${tool.name}">
-                </div>
-                <div class="col-7">
-                  <div class="card-body">
-                    <h5 class="card-title">${tool.name}</h5>
-                    <p class="card-text">${tool.description}</p>
-                    <a href="${tool.download}" class="btn btn-primary btn-sm" target="_blank">下載</a>
-                    ${docButton}
-                    <p class="mt-2 text-muted">備註：${tool.note || '無'}</p>
-                  </div>
+    function renderTools(data) {
+      const container = document.getElementById('tool-list');
+      container.innerHTML = '';
+
+      data.forEach(tool => {
+        const col = document.createElement('div');
+        col.className = 'col-md-6';
+
+        let docButton = '';
+        if (tool.doc && tool.doc.trim() !== '') {
+          docButton = `<a href="${tool.doc}" class="btn btn-secondary btn-sm ms-2" target="_blank">說明</a>`;
+        }
+
+        col.innerHTML = `
+          <div class="card h-100">
+            <div class="row g-0 align-items-center">
+              <div class="col-5 p-2">
+                <img src="${tool.image}" class="card-img-left img-fluid" alt="${tool.name}">
+              </div>
+              <div class="col-7">
+                <div class="card-body">
+                  <h5 class="card-title">${tool.name}</h5>
+                  <p class="card-text">${tool.description}</p>
+                  <p class="mb-1"><strong>工具介面：</strong>${tool.interface}</p>
+                  <p class="mb-1"><strong>適合領域：</strong>${tool.domain.join("、")}</p>
+                  <p class="mb-1"><strong>釋出時間：</strong>${tool.release}</p>
+                  <p class="mb-2"><strong>使用狀態：</strong>${tool.status}</p>
+                  <a href="${tool.download}" class="btn btn-primary btn-sm" target="_blank">下載</a>
+                  ${docButton}
+                  <p class="mt-2 text-muted">備註：${tool.note || '無'}</p>
                 </div>
               </div>
             </div>
-          `;
-          container.appendChild(col);
-        });
-      })
-      .catch(error => {
-        console.error('載入工具資料失敗：', error);
+          </div>
+        `;
+        container.appendChild(col);
       });
+    }
+
+    document.querySelectorAll('select').forEach(select => {
+      select.addEventListener('change', () => {
+        const interfaceVal = document.getElementById("filter-interface").value;
+        const domainVal = document.getElementById("filter-domain").value;
+        const releaseVal = document.getElementById("filter-release").value;
+        const statusVal = document.getElementById("filter-status").value;
+
+        const filtered = allData.filter(tool =>
+          (!interfaceVal || tool.interface === interfaceVal) &&
+          (!domainVal || (tool.domain && tool.domain.includes(domainVal))) &&
+          (!releaseVal || tool.release === releaseVal) &&
+          (!statusVal || tool.status === statusVal)
+        );
+        renderTools(filtered);
+      });
+    });
   </script>
 </body>
 </html>
