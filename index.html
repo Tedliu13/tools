@@ -129,7 +129,8 @@
           <div class="card h-100">
             <div class="row g-0 align-items-center">
               <div class="col-5 p-2">
-                <img src="${tool.image}" class="card-img-left img-fluid" alt="${tool.name}">
+                <a href="${tool.download}" target="_blank">
+                <img src="${tool.image}" class="card-img-left img-fluid" alt="${tool.name}"></a>
               </div>
               <div class="col-7">
                 <div class="card-body">
@@ -139,7 +140,7 @@
                   <p class="mb-1"><strong>適合領域：</strong>${tool.domain.join("、")}</p>
                   <p class="mb-1"><strong>釋出時間：</strong>${tool.release}</p>
                   <p class="mb-2"><strong>使用狀態：</strong>${tool.status}</p>
-                  <a href="${tool.download}" class="btn btn-primary btn-sm" target="_blank">下載</a>
+                  <a href="${tool.download}" class="btn btn-primary btn-sm" target="_blank">連結</a>
                   ${docButton}
                   <p class="mt-2 text-muted">備註：${tool.note || '無'}</p>
                 </div>

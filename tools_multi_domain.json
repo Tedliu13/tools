@@ -46,7 +46,7 @@
     "description": "提供既有之5km或是不規則polygon的危害圖資轉換成1km網格Shapefile與csv檔，轉成氣變組圖台之標準輸入檔案。",
     "image": "images/tools03.png",
     "download": "https://125.229.194.84/share.cgi?ssid=52cfbf719718492ab3c04beb29671dc1",
-    "doc": "無",
+    "doc": "",
     "interface": "程式介面",
     "domain": [
       "淹水",
@@ -67,7 +67,7 @@
     "description": "批次轉換TCCIP標準csv資料檔案為圖檔及Shapefile。",
     "image": "images/tools04.png",
     "download": "https://125.229.194.84/share.cgi?ssid=6fb08a3b4ae04c278863a0cfa41ce64f",
-    "doc": "無",
+    "doc": "",
     "interface": "程式介面",
     "domain": [
       "淹水",
