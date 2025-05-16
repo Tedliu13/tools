@@ -28,8 +28,8 @@
     "note": "對接TCCIP資料商店"
   },
   {
-    "name": "【危害圖資5km轉1km】",
-    "description": "提供既有之5km或是不規則polygon的危害圖資轉換成1km網格Shapefile與csv檔，轉成氣變組圖台之標準輸入檔案。",
+    "name": "【Shapefile/ASCII轉1km】",
+    "description": "提供既有圖資Shapefile/ASCII轉換成1km網格Shapefile與csv檔，作為氣變組圖台之標準輸入檔案。",
     "image": "images/tools03.png",
     "download": "https://125.229.194.84/share.cgi?ssid=52cfbf719718492ab3c04beb29671dc1",
     "doc": "",
