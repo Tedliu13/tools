@@ -56,6 +56,20 @@
     "note": "csv格式限定為資料商店的資料格式"
   },
   {
+    "name": "【TReAD小時資料雲端下載工具】",
+    "description": "TReAD小時資料為TCCIP Level 4 進階資料，此工具提供資料申請者，可以自行下載所需之資料",
+    "image": "images/tools01.png",
+    "download": "https://125.229.194.84/share.cgi?ssid=4f485b5a0aff4e75b5c30794a2af261b",
+    "doc": "TReAD小時資料雲端下載工具工具說明.pdf",
+    "interface": "程式介面",
+    "domain": [
+      "無限定"
+    ],
+    "release": "2025年5月",
+    "status": "使用中",
+    "note": "需先跟TCCIP提出TReAD進階資造申請"
+  },
+  {
     "name": "【MMIS資料處理及查詢模組】",
     "description": "針對Team1與商店資料進行轉檔、合併、切割、繪圖",
     "image": "images/tools05.png",
