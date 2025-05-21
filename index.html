@@ -72,9 +72,10 @@
       <h2 class="text-center mb-4">🧰 2.1.4 氣候變遷資料應用工具</h2>
       <div class="d-flex flex-wrap justify-content-center mb-4">
         <select id="filter-interface" class="form-select form-select-sm w-auto">
-          <option value="">介面樣式</option>
-          <option>程式介面</option>
-          <option>網頁介面</option>
+          <option value="">介面分類</option>
+          <option>雲端資料相關</option>
+          <option>圖資圖檔相關</option>
+          <option>資料商店相關</option>
         </select>
         <select id="filter-domain" class="form-select form-select-sm w-auto">
           <option value="">領域類別</option>
@@ -157,7 +158,7 @@
                 <div class="card-body">
                   <h5 class="card-title">${tool.name}</h5>
                   <p class="card-text">${tool.description}</p>
-                  <p class="mb-1"><strong>工具介面：</strong>${tool.interface}</p>
+                  <p class="mb-1"><strong>工具分類：</strong>${tool.interface}</p>
                   <p class="mb-1"><strong>適合領域：</strong>${tool.domain.join("、")}</p>
                   <p class="mb-1"><strong>釋出時間：</strong>${tool.release}</p>
                   <p class="mb-2"><strong>使用狀態：</strong>${tool.status}</p>
