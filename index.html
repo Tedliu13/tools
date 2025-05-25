@@ -158,7 +158,7 @@
                 <div class="card-body">
                   <h5 class="card-title">${tool.name}</h5>
                   <p class="card-text">${tool.description}</p>
-                  <p class="mb-1"><strong>工具分類：</strong>${tool.interface}</p>
+                  <p class="mb-1"><strong>工具分類：</strong>${tool.interface.join("、")}</p>
                   <p class="mb-1"><strong>適合領域：</strong>${tool.domain.join("、")}</p>
                   <p class="mb-1"><strong>釋出時間：</strong>${tool.release}</p>
                   <p class="mb-2"><strong>使用狀態：</strong>${tool.status}</p>
@@ -186,7 +186,7 @@
         const statusVal = document.getElementById("filter-status").value;
 
         const filtered = allData.filter(tool =>
-          (!interfaceVal || tool.interface === interfaceVal) &&
+          (!interfaceVal || (tool.interface && tool.interface.includes(interfaceVal))) &&
           (!domainVal || (tool.domain && tool.domain.includes(domainVal))) &&
           (!releaseVal || tool.release === releaseVal) &&
           (!statusVal || tool.status === statusVal)
