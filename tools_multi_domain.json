@@ -5,7 +5,9 @@
     "image": "images/tools01.png",
     "download": "https://125.229.194.84/share.cgi?ssid=3d39c45b1ca34ca9abc931591789244c",
     "doc": "雲端資料下載工具說明-20250507.pdf",
-    "interface": "雲端資料相關",
+    "interface": [
+      "雲端資料相關"
+    ],
     "domain": [
       "無限定"
     ],
@@ -19,7 +21,9 @@
     "image": "images/tools02.png",
     "download": "https://125.229.194.84/share.cgi?ssid=0b4a8f88e51c4db39e22a7dd12ee1e54",
     "doc": "AR6_統計降尺度資料合併工具v0.pdf",
-    "interface": "資料商店相關",
+    "interface": [
+      "資料商店相關"
+    ],
     "domain": [
       "無限定"
     ],
@@ -33,7 +37,10 @@
     "image": "images/tools03.png",
     "download": "https://125.229.194.84/share.cgi?ssid=52cfbf719718492ab3c04beb29671dc1",
     "doc": "Shapefile_ASCII轉1km工具說明.pdf",
-    "interface": "圖資圖檔相關",
+    "interface": [
+      "資料商店相關",
+      "圖資圖檔相關"
+    ],
     "domain": [
       "無限定"
     ],
@@ -47,7 +54,9 @@
     "image": "images/tools04.png",
     "download": "https://125.229.194.84/share.cgi?ssid=6fb08a3b4ae04c278863a0cfa41ce64f",
     "doc": "CSV2Shapefile工具說明.pdf",
-    "interface": "圖資圖檔相關",
+    "interface": [
+      "圖資圖檔相關"
+    ],
     "domain": [
       "無限定"
     ],
@@ -61,12 +70,30 @@
     "image": "images/tools05.png",
     "download": "https://125.229.194.84/share.cgi?ssid=4f485b5a0aff4e75b5c30794a2af261b",
     "doc": "TReAD小時資料雲端下載工具工具說明.pdf",
-    "interface": "雲端資料相關",
+    "interface": [
+      "雲端資料相關"
+    ],
     "domain": [
       "無限定"
     ],
     "release": "2025年5月",
     "status": "使用中",
     "note": "需先跟TCCIP提出TReAD進階資料申請"
+  },
+  {
+    "name": "【崩塌雨量計算工具】",
+    "description": "本工具為客製化工具，主要針對TCCIP崩塌模擬結果，分\n析集水區中每個網格發生崩塌時的累積雨量",
+    "image": "images/tools06.png",
+    "download": "https://125.229.194.84/share.cgi?ssid=68752ba9e96447b9a5530136ea9ba75a",
+    "doc": "崩塌雨量計算工具說明.pdf",
+    "interface": [
+      "圖資圖檔相關"
+    ],
+    "domain": [
+      "坡地"
+    ],
+    "release": "2025年5月",
+    "status": "使用中",
+    "note": "客製化給崩塌模擬結果之分析工具"
   }
 ]
