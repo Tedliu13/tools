@@ -95,5 +95,21 @@
     "release": "2025年5月",
     "status": "使用中",
     "note": "客製化給崩塌模擬結果之分析工具"
+  },
+  {
+    "name": "【網格化觀測日資料雲端下載工具】",
+    "description": "網格化觀測日資料可於TCCIP資料商店直接下載，本工具主要提供使用者，可以下載特定空間範圍之資料或是nc檔資料",
+    "image": "images/tools07.png",
+    "download": "https://125.229.194.84/share.cgi?ssid=9614e54d09cd470e9086445d422f657d",
+    "doc": "網格化觀測日資料雲端下載工具工具說明.pdf",
+    "interface": [
+      "雲端資料相關"
+    ],
+    "domain": [
+      "無限定"
+    ],
+    "release": "2025年6月",
+    "status": "使用中",
+    "note": "需跟TCCIP申請雲端金鑰"
   }
 ]
