@@ -111,5 +111,21 @@
     "release": "2025年6月",
     "status": "使用中",
     "note": "需跟TCCIP申請雲端金鑰"
+  },
+  {
+    "name": "【多場降雨崩塌雨量批次與系集分析工具】",
+    "description": "本工具為客製化工具，主要針對TCCIP崩塌多場降雨模擬結果，進行批次與系集分析每個網格發生崩塌時的累積雨量",
+    "image": "images/tools06.png",
+    "download": "https://125.229.194.84/share.cgi?ssid=e2732ed1d35b4b85835eac76a4603b6b",
+    "doc": "多場降雨崩塌雨量批次與系集分析工具說明.pdf",
+    "interface": [
+      "圖資圖檔相關"
+    ],
+    "domain": [
+      "坡地"
+    ],
+    "release": "2025年6月",
+    "status": "使用中",
+    "note": "客製化給崩塌模擬結果之分析工具"
   }
 ]
