@@ -1,7 +1,7 @@
 [
   {
-    "name": "【AR6 1km 統計降尺度日資料 雲端下載工具】",
-    "description": "簡單操作介面，給需要AR6 1km統計降尺度日資料的人，可以下載特定區域資料。",
+    "name": "【AR6 1km 統計降尺度日/月資料 雲端下載工具】",
+    "description": "簡單操作介面，給需要AR6 1km統計降尺度日/月資料的人，可以下載特定區域資料。",
     "image": "images/tools01.png",
     "download": "https://125.229.194.84/share.cgi?ssid=3d39c45b1ca34ca9abc931591789244c",
     "doc": "雲端資料下載工具說明-20250702.pdf",
@@ -127,5 +127,21 @@
     "release": "2025年6月",
     "status": "使用中",
     "note": "客製化給崩塌模擬結果之分析工具"
+  },
+  {
+    "name": "【日資料轉月資料工具】",
+    "description": "簡單操作介面，可將所有資料商店下載的日資料轉換月資料的通用型工具",
+    "image": "images/tools08.png",
+    "download": "https://125.229.194.84/share.cgi?ssid=b8306b6ba81c4091a03d2e531a64abb9",
+    "doc": "日資料轉月資料工具.pdf",
+    "interface": [
+      "資料商店相關"
+    ],
+    "domain": [
+      "無限定"
+    ],
+    "release": "2025年9月",
+    "status": "使用中",
+    "note": "格式限定為資料商店的csv資料格式"
   }
 ]
