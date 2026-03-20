@@ -38,6 +38,11 @@
     .card-title {
       color: #ffffff;
     }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
     .btn-primary {
       background-color: #2c5aa0;
       border-color: #2c5aa0;
@@ -63,6 +68,29 @@
     select {
       margin-right: 10px;
       margin-bottom: 20px;
+    }
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.75rem;
+    }
+    .btn-doc {
+      background-color: transparent;
+      border: 1px solid #9eb4d1;
+      color: #d6e2f3;
+    }
+    .btn-doc:hover {
+      background-color: #9eb4d1;
+      border-color: #9eb4d1;
+      color: #0f1c2e;
+    }
+    .card-note {
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: #c6d3e3 !important;
     }
   </style>
 </head>
@@ -136,11 +164,11 @@
         let detailLink = `tool-pages/${encodeURIComponent(tool.id)}.html`;
         let docButton = '';
         if (tool.doc && tool.doc.trim() !== '') {
-          docButton = `<a href="${tool.doc}" class="btn btn-secondary btn-sm ms-2" target="_blank"
+          docButton = `<a href="${tool.doc}" class="btn btn-doc btn-sm" target="_blank"
           onclick="gtag('event', 'doc_click', {
             event_category: '說明',
             event_label: '${tool.name}'
-          })">說明</a>`;
+          })">說明文件</a>`;
 
         }
 
@@ -164,13 +192,15 @@
                   <p class="mb-1"><strong>適合領域：</strong>${tool.domain.join("、")}</p>
                   <p class="mb-1"><strong>釋出時間：</strong>${tool.release}</p>
                   <p class="mb-2"><strong>使用狀態：</strong>${tool.status}</p>
-                  <a href="${detailLink}" class="btn btn-primary btn-sm"
-                    onclick="gtag('event', 'download_click', {
-                      event_category: '工具頁',
-                      event_label: '${tool.name}'
-                    })">查看工具頁</a>
-                  ${docButton}
-                  <p class="mt-2 text-muted">備註：${tool.note || '無'}</p>
+                  <div class="card-actions">
+                    <a href="${detailLink}" class="btn btn-primary btn-sm"
+                      onclick="gtag('event', 'download_click', {
+                        event_category: '工具頁',
+                        event_label: '${tool.name}'
+                      })">查看工具頁</a>
+                    ${docButton}
+                  </div>
+                  <p class="card-note">備註：${tool.note || '無'}</p>
                 </div>
               </div>
             </div>
