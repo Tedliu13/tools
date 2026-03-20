@@ -31,9 +31,13 @@
       font-family: "微軟正黑體", sans-serif;
     }
     .card {
+      display: flex;
+      flex-direction: column;
       background-color: rgba(0, 0, 0, 0.5);
       color: #e0e6f0;
       border: 1px solid #3a4b63;
+      overflow: hidden;
+      min-height: 100%;
     }
     .card-title {
       color: #ffffff;
@@ -41,7 +45,7 @@
     .card-body {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      flex: 0 0 35%;
     }
     .btn-primary {
       background-color: #2c5aa0;
@@ -54,8 +58,14 @@
     .card-img-left {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       background-color: transparent;
+    }
+    .card-image-wrap {
+      flex: 0 0 65%;
+      overflow: hidden;
+      background-color: rgba(8, 14, 24, 0.7);
+      border-bottom: 1px solid #3a4b63;
     }
     .overlay {
       background-color: rgba(15, 28, 46, 0.85);
@@ -91,6 +101,41 @@
       margin-bottom: 0;
       font-size: 0.95rem;
       color: #c6d3e3 !important;
+    }
+    .card-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+    .card-meta {
+      margin-bottom: 0;
+      color: #d6e2f3;
+      font-size: 0.9rem;
+    }
+    .card-title {
+      margin-bottom: 0.6rem;
+    }
+    @media (min-width: 768px) {
+      .card {
+        height: 520px;
+      }
+      .card-body {
+        min-height: 180px;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .card {
+        min-height: auto;
+      }
+      .card-image-wrap,
+      .card-body {
+        flex: 0 0 auto;
+      }
+      .card-image-wrap {
+        aspect-ratio: 4 / 3;
+      }
     }
   </style>
 </head>
@@ -173,35 +218,27 @@
         }
 
         col.innerHTML = `
-          <div class="card h-100">
-            <div class="row g-0 d-flex align-items-start">
-              <div class="col-5 p-2">
-                <a href="${detailLink}"
-                  onclick="gtag('event', 'image_click', {
-                    event_category: '圖片點擊',
+          <div class="card">
+            <div class="card-image-wrap">
+              <a href="${detailLink}"
+                onclick="gtag('event', 'image_click', {
+                  event_category: '圖片點擊',
+                  event_label: '${tool.name}'
+                })">
+                <img src="${tool.image}" alt="${tool.name}" class="card-img-left img-fluid">
+              </a>
+            </div>
+            <div class="card-body p-3">
+              <h5 class="card-title">${tool.name}</h5>
+              <p class="card-text">${tool.description}</p>
+              <p class="card-meta"><strong>工具分類：</strong>${tool.interface.join("、")}</p>
+              <div class="card-actions">
+                <a href="${detailLink}" class="btn btn-primary btn-sm"
+                  onclick="gtag('event', 'download_click', {
+                    event_category: '工具頁',
                     event_label: '${tool.name}'
-                  })">
-                  <img src="${tool.image}" alt="${tool.name}" class="card-img-left img-fluid">
-                </a>
-              </div>
-              <div class="col-7">
-                <div class="card-body">
-                  <h5 class="card-title">${tool.name}</h5>
-                  <p class="card-text">${tool.description}</p>
-                  <p class="mb-1"><strong>工具分類：</strong>${tool.interface.join("、")}</p>
-                  <p class="mb-1"><strong>適合領域：</strong>${tool.domain.join("、")}</p>
-                  <p class="mb-1"><strong>釋出時間：</strong>${tool.release}</p>
-                  <p class="mb-2"><strong>使用狀態：</strong>${tool.status}</p>
-                  <div class="card-actions">
-                    <a href="${detailLink}" class="btn btn-primary btn-sm"
-                      onclick="gtag('event', 'download_click', {
-                        event_category: '工具頁',
-                        event_label: '${tool.name}'
-                      })">查看工具頁</a>
-                    ${docButton}
-                  </div>
-                  <p class="card-note">備註：${tool.note || '無'}</p>
-                </div>
+                  })">查看工具頁</a>
+                ${docButton}
               </div>
             </div>
           </div>
