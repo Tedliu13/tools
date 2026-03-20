@@ -1,2 +1,4 @@
 excel_to_json_multi_domain.py
 tools.xlsx
+__pycache__/
+~$*.xlsx
