@@ -133,6 +133,7 @@
         const col = document.createElement('div');
         col.className = 'col-md-6';
 
+        let detailLink = `tool.html?id=${encodeURIComponent(tool.id)}`;
         let docButton = '';
         if (tool.doc && tool.doc.trim() !== '') {
           docButton = `<a href="${tool.doc}" class="btn btn-secondary btn-sm ms-2" target="_blank"
@@ -147,7 +148,7 @@
           <div class="card h-100">
             <div class="row g-0 d-flex align-items-start">
               <div class="col-5 p-2">
-                <a href="${tool.download}" target="_blank"
+                <a href="${detailLink}"
                   onclick="gtag('event', 'image_click', {
                     event_category: '圖片點擊',
                     event_label: '${tool.name}'
@@ -163,11 +164,11 @@
                   <p class="mb-1"><strong>適合領域：</strong>${tool.domain.join("、")}</p>
                   <p class="mb-1"><strong>釋出時間：</strong>${tool.release}</p>
                   <p class="mb-2"><strong>使用狀態：</strong>${tool.status}</p>
-                  <a href="${tool.download}" class="btn btn-primary btn-sm" target="_blank"
+                  <a href="${detailLink}" class="btn btn-primary btn-sm"
                     onclick="gtag('event', 'download_click', {
-                      event_category: '下載',
+                      event_category: '工具頁',
                       event_label: '${tool.name}'
-                    })">連結</a>
+                    })">查看工具頁</a>
                   ${docButton}
                   <p class="mt-2 text-muted">備註：${tool.note || '無'}</p>
                 </div>
