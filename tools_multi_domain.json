@@ -173,9 +173,9 @@
   {
     "id": "text-to-speech-service",
     "name": "【文字檔轉語音服務】",
-    "description": "目前仍只能在linux機器下執行，尚未開發為介面工具或網頁工具，因此，請有需要的同仁跟2.1.4聯繫，由2.1.4協助完成您的需求",
+    "description": "已開發網頁工具，請有需要的同仁跟2.1.4詢問API Key即可使用，或請2.1.4利用工作站快速完成您的需求",
     "image": "images/text-to-speech.png",
-    "download": "",
+    "download": "https://breezyvoice-production.up.railway.app/",
     "doc": "text-to-speech.pdf",
     "interface": [
       "其他"
