@@ -175,7 +175,7 @@
     "name": "【文字檔轉語音服務】",
     "description": "已開發網頁工具，請有需要的同仁跟2.1.4詢問API Key即可使用，或請2.1.4利用工作站快速完成您的需求",
     "image": "images/text-to-speech.png",
-    "download": "https://breezyvoice-production.up.railway.app/",
+    "download": "",
     "doc": "text-to-speech.pdf",
     "interface": [
       "其他"
@@ -201,6 +201,23 @@
       "無限定"
     ],
     "release": "2026年3月",
+    "status": "使用中",
+    "note": ""
+  },
+  {
+    "id": "gistool",
+    "name": "【GisTool圖層切割工具】",
+    "description": "透過本工具可以批次將全台的Shapefile以Intersect方式切割成縣市Shapefile",
+    "image": "images/GisTool.png",
+    "download": "https://125.229.194.84/share.cgi?ssid=1ff5f59503004f309f29407ed10cb84e",
+    "doc": "GisTool.pdf",
+    "interface": [
+      "圖資圖檔相關"
+    ],
+    "domain": [
+      "無限定"
+    ],
+    "release": "2026年4月",
     "status": "使用中",
     "note": ""
   }
