@@ -71,10 +71,10 @@
   {
     "id": "tread-hourly-download",
     "name": "【TReAD小時資料雲端下載工具】",
-    "description": "TReAD小時資料為TCCIP Level 4 進階資料，此工具提供資料申請者，可以自行下載所需之資料",
+    "description": "TReAD小時資料為TCCIP Level 4 進階資料，此工具提供資料產製者，可以快速切割資料並提供下載連結",
     "image": "images/tools05.png",
     "download": "https://125.229.194.84/share.cgi?ssid=4f485b5a0aff4e75b5c30794a2af261b",
-    "doc": "TReAD小時資料雲端下載工具工具說明.pdf",
+    "doc": "TReAD小時資料雲端下載工具ver.20260429說明.pdf",
     "interface": [
       "雲端資料相關"
     ],
@@ -83,7 +83,7 @@
     ],
     "release": "2025年5月",
     "status": "使用中",
-    "note": "需先跟TCCIP提出TReAD進階資料申請"
+    "note": "僅提供資料產製者下載"
   },
   {
     "id": "landslide-rainfall",
@@ -168,7 +168,7 @@
     ],
     "release": "2026年3月",
     "status": "使用中",
-    "note": ""
+    "note": "僅提供網站管理者使用"
   },
   {
     "id": "text-to-speech-service",
