@@ -237,5 +237,22 @@
     "release": "2026年7月",
     "status": "使用中",
     "note": "格式限定為資料商店的csv資料格式"
+  },
+  {
+    "id": "nc2shapefile",
+    "name": "",
+    "description": "本工具支援已具備1km以及5km網格經緯度資訊，指標類型之nc檔轉換成Shapefile\n輸出檔案除了Shapefile檔之外，同時提供png檔，方便快速了解資料空間資訊",
+    "image": "images/nc2shapefile.png",
+    "download": " https://125.229.194.84/share.cgi?ssid=8a39e211a0884551a5c5a4c749535c27",
+    "doc": "nc2shapefile.pdf",
+    "interface": [
+      "其他"
+    ],
+    "domain": [
+      "無限定"
+    ],
+    "release": "2026年7月",
+    "status": "使用中",
+    "note": ""
   }
 ]
